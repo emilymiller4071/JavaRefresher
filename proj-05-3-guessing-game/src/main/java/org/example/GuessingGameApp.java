@@ -116,7 +116,7 @@ public class GuessingGameApp {
                 System.out.println("Error! Number must be larger than " + min);
                 System.out.println();
             } else if (number > max) {
-                System.out.println("Error! Number must be larger than " + max);
+                System.out.println("Error! Number must be less than " + max);
                 System.out.println();
             } else {
                 isValid = true;
@@ -143,13 +143,16 @@ public class GuessingGameApp {
         return response;
     }
 
-    // collect the response from user to continue
+    // collect the response from the user to continue
     public static String getWantsToContinue(Scanner scanner, String prompt, String yes, String no) {
         String response = "";
         boolean isValid = false;
         while (!isValid) {
             response = getString(scanner, prompt);
-            if (!response.equalsIgnoreCase(yes) && !response.equalsIgnoreCase(no)) {
+            if (response.trim().isEmpty()) {
+                System.out.println("Error! This is a required entry! Try again.");
+                System.out.println();
+            } else if (!response.equalsIgnoreCase(yes) && !response.equalsIgnoreCase(no)) {
                 System.out.println("Error! Must enter '" + yes + "' or '" + no + "'. Try again.");
                 System.out.println();
             } else {
@@ -158,4 +161,5 @@ public class GuessingGameApp {
         }
         return response;
     }
+
 }
