@@ -8,21 +8,23 @@ public class DiceRollerApp {
     public static void main(String[] args) {
 
 
-
+        // welcome player to the game
         displayWelcome();
 
-        // ask if player wants to roll
 
-        // create new dice objects
+        // ask if player wants to roll first time
+        String choice = getChoice("Roll the dice? (y/n): ", "y", "n");
 
-        // roll the dice
 
-        // get the value of the dice
+        while (choice.equalsIgnoreCase("y")) {
+            Dice dice = new Dice();
+            dice.roll();
+            dice.printRoll();
 
-        // print the outcome of the roll
 
-        // ask if the player wants to roll again
-
+            choice = getChoice("Roll again? (y/n): ", "y", "n");
+        }
+        System.out.println("Goodbye!");
     }
 
     public static void displayWelcome() {
@@ -35,7 +37,7 @@ public class DiceRollerApp {
         boolean isValid = false;
 
         while (!isValid) {
-            System.out.println(prompt);
+            System.out.print(prompt);
             response = scanner.nextLine();
             if (response.equals("")) {
                 System.out.println("Error! This is a required entry. Try again.");
@@ -47,7 +49,7 @@ public class DiceRollerApp {
         return response;
     }
 
-    public static String getWantsToContinue(String prompt, String yes, String no) {
+    public static String getChoice(String prompt, String yes, String no) {
         String response = "";
         boolean isValid = false;
 

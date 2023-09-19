@@ -8,8 +8,8 @@ public class Dice {
     private Die dieTwo;
 
     public Dice() {
-        Die dieOne = new Die();
-        Die dieTwo = new Die();
+        this.dieOne = new Die();
+        this.dieTwo = new Die();
     }
 
     public int getDieOne() {
@@ -32,8 +32,8 @@ public class Dice {
     public void printRoll() {
         int total = getSum();
         System.out.println();
-        System.out.println("Die 1: " + dieOne.getFaceValue());
-        System.out.println("Die 2: " + dieTwo.getFaceValue());
+        System.out.println("Die 1: " + getDieOne());
+        System.out.println("Die 2: " + getDieTwo());
         System.out.println("Total: " + total);
 
         if (total == 7) {
