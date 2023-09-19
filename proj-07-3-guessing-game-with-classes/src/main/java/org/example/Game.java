@@ -21,7 +21,7 @@ public class Game {
         System.out.println();
     }
 
-    public void printCorrectGuessMessage(int howManyGuesses) {
+    public void printCorrectGuessMessage() {
         System.out.println("You got it in " + howManyGuesses);
         if (howManyGuesses <= 3) {
             System.out.println("Great work! You are a mathematical wizard!");
@@ -35,9 +35,9 @@ public class Game {
         }
     }
 
-    public void needToGuessAgain(int number, int guessedNumber) {
-        int difference = guessedNumber - number;
-        if (guessedNumber > number) {
+    public void needToGuessAgain() {
+        int difference = guessedNumber - randomNumber;
+        if (guessedNumber > randomNumber) {
             if (difference > 10) {
                 System.out.println("Way too high! Guess again.");
                 System.out.println();
@@ -58,6 +58,7 @@ public class Game {
 
     public void makeGuess(int guessedNumber) {
         this.guessedNumber = guessedNumber;
+        howManyGuesses++;
     }
 
     public boolean isCorrect() {

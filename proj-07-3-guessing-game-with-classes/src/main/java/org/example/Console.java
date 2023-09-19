@@ -3,9 +3,9 @@ package org.example;
 import java.util.Scanner;
 
 public class Console {
-    private Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static int getValidInteger(Scanner scanner, String prompt) {
+    public static int getValidInteger(String prompt) {
         boolean isValid = false;
         int value = 0;
         while (!isValid) {
@@ -18,7 +18,7 @@ public class Console {
                 value = scanner.nextInt();
                 isValid = true;
             } else {
-                System.out.println("Error! Entry must be a number. Try Again.");
+                System.out.println("Error! Invalid integer. Try Again.");
                 System.out.println();
             }
             scanner.nextLine();
@@ -26,11 +26,11 @@ public class Console {
         return value;
     }
 
-    public static int getIntInRange(Scanner scanner, String prompt, int min, int max) {
+    public static int getIntInRange(String prompt, int min, int max) {
         int number = 0;
         boolean isValid = false;
         while (!isValid) {
-            number = getValidInteger(scanner, prompt);
+            number = getValidInteger(prompt);
             if (number < min) {
                 System.out.println("Error! Number must be larger than " + min);
                 System.out.println();
@@ -44,7 +44,7 @@ public class Console {
         return number;
     }
 
-    public static String getString(Scanner scanner, String prompt) {
+    public static String getString(String prompt) {
         String response = "";
         boolean isValid = false;
 
@@ -61,11 +61,11 @@ public class Console {
         return response;
     }
 
-    public static String getWantsToContinue(Scanner scanner, String prompt, String yes, String no) {
+    public static String getWantsToContinue(String prompt, String yes, String no) {
         String response = "";
         boolean isValid = false;
         while (!isValid) {
-            response = getString(scanner, prompt);
+            response = getString(prompt);
             if (response.trim().isEmpty()) {
                 System.out.println("Error! This is a required entry! Try again.");
                 System.out.println();
