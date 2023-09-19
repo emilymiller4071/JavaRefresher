@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class Console {
     private Scanner scanner = new Scanner(System.in);
 
-    public static int getRandomNumber() {
-        return (int) (Math.random() * 100) + 1;
-    }
-
     public static int getValidInteger(Scanner scanner, String prompt) {
         boolean isValid = false;
         int value = 0;
         while (!isValid) {
             System.out.print(prompt);
-            if (scanner.hasNextInt()) {
+
+            if (scanner.equals("")) {
+                System.out.println("Error! This is a required entry. Try again.");
+                System.out.println();
+            }else if (scanner.hasNextInt()) {
                 value = scanner.nextInt();
                 isValid = true;
             } else {

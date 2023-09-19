@@ -56,5 +56,11 @@ public class Game {
         }
     }
 
+    public void makeGuess(int guessedNumber) {
+        this.guessedNumber = guessedNumber;
+    }
 
+    public boolean isCorrect() {
+        return guessedNumber == randomNumber;
+    }
 }
