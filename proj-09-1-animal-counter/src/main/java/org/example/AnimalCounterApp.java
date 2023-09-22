@@ -22,7 +22,6 @@ public class AnimalCounterApp {
 
         Alligator alligator = new Alligator();
         count(alligator, 3);
-        System.out.println();
     }
     public static void countSheep() throws CloneNotSupportedException {
         System.out.println("Counting sheep...\n");
