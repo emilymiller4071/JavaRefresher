@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public class Console {
 
-    private static Scanner scanner;
+    private static Scanner scanner = new Scanner(System.in);
 
     public Console() {
-        scanner = new Scanner(System.in);
     }
 
-    public String getString(String prompt) {
+    public static String getString(String prompt) {
         String response = "";
         boolean isValid = false;
         while (!isValid) {
@@ -25,7 +24,7 @@ public class Console {
         return response;
     }
 
-    public String getString(String prompt, String s1, String s2) {
+    public static String getString(String prompt, String s1, String s2) {
         String response = "";
         boolean isValid = false;
         while (!isValid) {

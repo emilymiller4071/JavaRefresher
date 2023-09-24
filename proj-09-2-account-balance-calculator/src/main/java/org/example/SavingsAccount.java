@@ -14,6 +14,11 @@ public class SavingsAccount extends Account {
         monthlyInterestPayment = monthlyInterestRate * balance;
         double updatedBalance = balance + monthlyInterestPayment;
         super.setBalance(updatedBalance);
+
+    }
+
+    public double getMonthlyInterestPayment() {
+        return monthlyInterestPayment;
     }
 
 }

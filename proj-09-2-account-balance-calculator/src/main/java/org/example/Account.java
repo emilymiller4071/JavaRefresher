@@ -14,17 +14,17 @@ public class Account implements Depositable, Withdrawable, Balanceable{
         return balance;
     }
     @Override
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setBalance(double amount) {
+        balance = amount;
     }
 
     @Override
     public void deposit(double amount) {
-
+        balance += amount;
     }
 
     @Override
     public void withdraw(double amount) {
-
+        balance -= amount;
     }
 }
